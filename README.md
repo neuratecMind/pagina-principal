@@ -1,4 +1,4 @@
-# Projeto 3D Minimalista
+# Projeto relacionado a pagina principal
 
 Website estatico em HTML5, CSS3 e JavaScript, criado para hospedagem via GitHub Pages.
 
