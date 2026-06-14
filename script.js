@@ -1,9 +1,9 @@
-const logo1 = "isotipo1.png";
+const logo1 = "Logo.png";
 const model = "modelo.glb";
 
 // Troque estes valores pelos destinos reais quando estiverem prontos.
 // Exemplo: const documentacao = "https://seu-link-da-documentacao.com";
-const catalogo = "#catalogo";
+const catalogo = "https://neuratecmind.github.io/Catalogo-de-Produtos/";
 const documentacao = "#documentacao";
 const sobreCriador = "#criador";
 const contato = "#contato";
