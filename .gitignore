@@ -1,0 +1,16 @@
+# Dependencias e caches locais
+.codex_deps/
+__pycache__/
+*.pyc
+node_modules/
+
+# Arquivos temporarios do sistema/editor
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Ambientes locais
+.env
+.env.*
+

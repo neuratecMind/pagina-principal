@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website minimalista com is&oacute;tipo, circunfer&ecirc;ncia colorida, visualizador 3D e base preparada para integra&ccedil;&atilde;o futura com back-end.">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Projeto 3D Minimalista">
+    <meta property="og:description" content="Interface moderna inspirada na refer&ecirc;ncia visual enviada.">
+    <meta property="og:type" content="website">
+    <title>Projeto 3D Minimalista</title>
+    <link rel="preload" as="image" href="isotipo1.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js" type="module"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="site" id="top">
+        <aside class="site-rail" aria-label="Navega&ccedil;&atilde;o principal">
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-controls="siteMenu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </aside>
+
+        <main class="site-main">
+            <a class="logo-corner" href="#top" aria-label="Voltar ao in&iacute;cio">
+                <img id="brandLogo" src="isotipo1.png" alt="Is&oacute;tipo do projeto">
+            </a>
+
+            <section class="hero" aria-labelledby="heroTitle">
+                <div class="circunferencia-central" role="img" aria-label="Circunfer&ecirc;ncia oca colorida">
+                    <svg viewBox="0 0 306 306" aria-hidden="true" focusable="false">
+                        <defs>
+                            <linearGradient id="slicePink" x1="153" y1="0" x2="306" y2="153" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#fff0a6"/>
+                                <stop offset="0.54" stop-color="#ffc8d4"/>
+                                <stop offset="1" stop-color="#f99aec"/>
+                            </linearGradient>
+                            <linearGradient id="sliceOrange" x1="306" y1="153" x2="153" y2="306" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#ffdf57"/>
+                                <stop offset="0.54" stop-color="#ffc45b"/>
+                                <stop offset="1" stop-color="#ff9044"/>
+                            </linearGradient>
+                            <linearGradient id="sliceBlue" x1="0" y1="153" x2="153" y2="306" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#50d5d5"/>
+                                <stop offset="0.48" stop-color="#6596ef"/>
+                                <stop offset="1" stop-color="#8748f6"/>
+                            </linearGradient>
+                            <linearGradient id="sliceSoft" x1="153" y1="0" x2="0" y2="153" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#f6a4ee"/>
+                                <stop offset="0.48" stop-color="#ffc4cf"/>
+                                <stop offset="1" stop-color="#fff2a7"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M153 0 A153 153 0 0 1 306 153 L229.5 153 A76.5 76.5 0 0 0 153 76.5 Z" fill="url(#slicePink)"/>
+                        <path d="M306 153 A153 153 0 0 1 153 306 L153 229.5 A76.5 76.5 0 0 0 229.5 153 Z" fill="url(#sliceOrange)"/>
+                        <path d="M153 306 A153 153 0 0 1 0 153 L76.5 153 A76.5 76.5 0 0 0 153 229.5 Z" fill="url(#sliceBlue)"/>
+                        <path d="M0 153 A153 153 0 0 1 153 0 L153 76.5 A76.5 76.5 0 0 0 76.5 153 Z" fill="url(#sliceSoft)"/>
+                    </svg>
+                </div>
+
+                <div class="texto-exemplo">
+                    <p class="eyebrow">Experi&ecirc;ncia digital 3D</p>
+                    <h1 id="heroTitle">T&iacute;tulo Principal do Projeto</h1>
+                    <p>Texto descritivo aqui. Substitua este conte&uacute;do conforme sua necessidade. Este &eacute; um placeholder edit&aacute;vel.</p>
+                </div>
+
+                <section class="model-section" id="modelo-3d" aria-labelledby="modelTitle">
+                    <div class="section-heading">
+                        <p class="eyebrow">Produto interativo</p>
+                        <h2 id="modelTitle">Visualiza&ccedil;&atilde;o 3D</h2>
+                    </div>
+                    <model-viewer
+                        id="productModel"
+                        src="modelo.glb"
+                        alt="Visualiza&ccedil;&atilde;o 3D do Produto"
+                        auto-rotate
+                        camera-controls
+                        shadow-intensity="1"
+                        exposure="0.8"
+                        style="width: 100%; height: 520px; background-color: #f8f9fa;">
+                        <div class="model-loader" slot="poster" aria-label="Carregando modelo 3D">
+                            <span></span>
+                        </div>
+                        <div class="model-progress" slot="progress-bar">
+                            <span></span>
+                        </div>
+                        <div class="model-error" slot="error">
+                            Adicione o arquivo <strong>modelo.glb</strong> na raiz do projeto para ativar a visualiza&ccedil;&atilde;o 3D.
+                        </div>
+                    </model-viewer>
+                </section>
+            </section>
+
+            <section class="content-band" id="catalogo" aria-labelledby="catalogTitle">
+                <div class="band-copy">
+                    <p class="eyebrow">Cat&aacute;logo de Produtos</p>
+                    <h2 id="catalogTitle">Produtos preparados para apresenta&ccedil;&atilde;o digital.</h2>
+                    <p>Organize itens, modelos 3D, descri&ccedil;&otilde;es comerciais e dados vindos de uma API quando o back-end estiver dispon&iacute;vel.</p>
+                </div>
+                <div class="band-actions" aria-label="A&ccedil;&otilde;es do cat&aacute;logo">
+                    <a class="text-link" href="#catalogo" data-link-key="catalogo">Abrir cat&aacute;logo</a>
+                </div>
+            </section>
+
+            <section class="content-band subtle" id="documentacao" aria-labelledby="docsTitle">
+                <div class="band-copy">
+                    <p class="eyebrow">Documenta&ccedil;&atilde;o</p>
+                    <h2 id="docsTitle">Estrutura clara para evoluir o projeto.</h2>
+                    <p>O front-end j&aacute; exp&otilde;e pontos de conex&atilde;o para carregar produtos, enviar leads e sincronizar conte&uacute;do.</p>
+                </div>
+                <div class="band-actions" aria-label="A&ccedil;&otilde;es de documenta&ccedil;&atilde;o">
+                    <a class="text-link" href="#documentacao" data-link-key="documentacao">Ler documenta&ccedil;&atilde;o</a>
+                </div>
+            </section>
+
+            <section class="creator-section" id="criador" aria-labelledby="creatorTitle">
+                <p class="eyebrow">Sobre o criador</p>
+                <h2 id="creatorTitle">Um ponto de partida moderno, responsivo e pronto para crescer.</h2>
+                <p>Atualize textos, imagens e endpoints em poucos lugares. A experi&ecirc;ncia preserva a refer&ecirc;ncia visual no primeiro impacto e abre espa&ccedil;o para conte&uacute;do real abaixo da dobra.</p>
+            </section>
+        </main>
+    </div>
+
+    <div class="menu-scrim" id="menuScrim" hidden></div>
+
+    <nav class="menu-drawer" id="siteMenu" aria-label="Menu do site" hidden>
+        <div class="menu-head">
+            <strong>Menu</strong>
+            <button class="icon-button" id="menuClose" type="button" aria-label="Fechar menu">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M18 6 6 18M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <a href="#catalogo" class="menu-link" data-link-key="catalogo">Cat&aacute;logo de Produtos</a>
+        <a href="#documentacao" class="menu-link" data-link-key="documentacao">Documenta&ccedil;&atilde;o</a>
+        <a href="#criador" class="menu-link" data-link-key="sobreCriador">Sobre o criador</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">
+            <span class="theme-icon" aria-hidden="true"></span>
+            <span>Dark mode</span>
+        </button>
+    </nav>
+
+    <button class="float-action" id="contactFab" type="button" aria-label="Abrir contato r&aacute;pido">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 4h16v12H7l-3 3V4Z"/>
+            <path d="M8 9h8M8 13h5"/>
+        </svg>
+    </button>
+
+    <aside class="quick-contact" id="quickContact" aria-labelledby="contactTitle" hidden>
+        <button class="icon-button quick-close" id="contactClose" type="button" aria-label="Fechar contato">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 6 6 18M6 6l12 12"/>
+            </svg>
+        </button>
+        <p class="eyebrow">Contato</p>
+        <h2 id="contactTitle">Fale sobre o projeto</h2>
+        <form id="leadForm" data-api-endpoint="/api/leads">
+            <label>
+                <span>Nome</span>
+                <input type="text" name="name" autocomplete="name" required>
+            </label>
+            <label>
+                <span>E-mail</span>
+                <input type="email" name="email" autocomplete="email" required>
+            </label>
+            <label>
+                <span>Mensagem</span>
+                <textarea name="message" rows="3" required></textarea>
+            </label>
+            <button class="btn" type="submit">Enviar</button>
+            <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+    </aside>
+
+    <footer class="site-footer" id="contato">
+        <div>
+            <strong>Projeto 3D Minimalista</strong>
+            <p>&copy; 2026 Seu Nome. Todos os direitos reservados.</p>
+        </div>
+        <nav aria-label="Links &uacute;teis">
+            <a href="#catalogo" data-link-key="catalogo">Cat&aacute;logo</a>
+            <a href="#documentacao" data-link-key="documentacao">Documenta&ccedil;&atilde;o</a>
+            <a href="#criador" data-link-key="sobreCriador">Sobre</a>
+            <a href="#contato" data-link-key="contato">Contato</a>
+        </nav>
+        <div class="social-links" aria-label="Redes sociais">
+            <a href="#" aria-label="Instagram" data-link-key="instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="4" y="4" width="16" height="16" rx="5"/>
+                    <circle cx="12" cy="12" r="3.5"/>
+                    <path d="M17 7.2h.01"/>
+                </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" data-link-key="linkedin">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6.5 10v8M6.5 7v.01M11 18v-8M11 13.6c0-2.1 1.4-3.6 3.5-3.6S18 11.4 18 14v4"/>
+                </svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)" title="X (Twitter)" data-link-key="x">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 5l14 14M19 5 5 19"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
